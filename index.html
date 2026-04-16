@@ -3,441 +3,522 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Prompt Squad — AI Setup for Phoenix Businesses & Individuals</title>
+  <title>The Prompt Squad — AI consulting {for the rest of us}. Gilbert, Arizona.</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta name="description" content="The Prompt Squad helps Gilbert, AZ and Phoenix metro businesses and individuals get set up with AI. Expert Claude AI setup, training, and ongoing support.">
+  <meta name="description" content="A small, in-person AI consultancy in Gilbert, AZ. We come to your office, set up your AI tools, and show you how to use them. Plain English. Real results.">
+
+  <meta property="og:title" content="The Prompt Squad — AI consulting for the rest of us">
+  <meta property="og:description" content="In-person AI setup, training, and support across the Phoenix metro area.">
+  <meta property="og:type" content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <!-- GSAP for slide animation + Lenis for buttery smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav class="nav nav--transparent" id="nav">
-    <div class="nav-inner container">
-      <a href="#" class="logo">
-        The Prompt Squad
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#services">Services</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#plans">Plans</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="btn btn-sm">Get Started</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+  <!-- ─────────────────────  NAV  ───────────────────── -->
+  <header class="nav">
+    <div class="nav__inner">
+      <button class="nav__menu-btn" id="navMenuBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-    </div>
-  </nav>
 
-  <!-- Hero -->
-  <header class="hero" id="hero">
-    <!-- Background Video -->
-    <video class="hero-video" id="heroVideo" autoplay loop muted playsinline></video>
-    <!-- Bottom fade gradient -->
-    <div class="hero-gradient"></div>
-
-    <!-- Content -->
-    <div class="hero-content">
-      <div class="hero-top-group">
-        <!-- Badge -->
-        <div class="hero-badge blur-in" style="--delay: 0s;">
-          <svg class="sparkle-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-          <span>Your New AI Automation Ally</span>
-        </div>
-
-        <!-- Heading -->
-        <h1 class="hero-heading">
-          <span class="split-text">Unlock the Power of AI</span>
-          <span class="split-text">for Your <em class="serif-italic">Business.</em></span>
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="hero-sub blur-in" style="--delay: 0.4s;">
-          We set up, configure, and optimize AI tools for businesses and individuals across the Phoenix metro area — so you can skip the learning curve and go straight to results.
-        </p>
+      <div class="nav__meta">
+        <span class="nav__meta-label">The Prompt Squad</span>
+        <span class="nav__meta-value"><span class="brace">{</span>AI&nbsp;CONSULTING<span class="brace">}</span></span>
       </div>
 
-      <!-- CTA Buttons -->
-      <div class="hero-actions blur-in" style="--delay: 0.6s;">
-        <a href="#contact" class="btn-hero-primary">
-          Book a Free Consultation
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <a href="#services" class="btn-hero-secondary">Learn More</a>
+      <div class="nav__meta nav__meta--mid">
+        <span class="nav__meta-label">Location</span>
+        <span class="nav__meta-value"><span class="brace">{</span>GILBERT,&nbsp;ARIZONA<span class="brace">}</span></span>
       </div>
+
+      <div class="nav__meta nav__meta--mid">
+        <span class="nav__meta-label">Contact</span>
+        <span class="nav__meta-value"><span class="brace">{</span>(480)&nbsp;555-0142<span class="brace">}</span></span>
+      </div>
+
+      <a href="#contact" class="btn btn--light btn--pill">LET'S TALK</a>
     </div>
   </header>
 
-  <!-- Problem -->
-  <section class="problem">
-    <div class="container">
-      <div class="problem-grid">
-        <div class="problem-card">
-          <h3>Overwhelmed</h3>
-          <p>"There are a hundred AI tools and I don't know where to start."</p>
+  <!-- Vertical brand mark, bottom-left -->
+  <div class="brand-mark" aria-hidden="true">
+    <span class="brace">{</span>THE&nbsp;PROMPT&nbsp;SQUAD<span class="brace">}</span>
+  </div>
+
+  <!-- Background column lines (subtle vertical dividers, fixed) -->
+  <div class="grid-lines" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Side menu backdrop — tap to close -->
+  <div class="side-menu__backdrop" id="menuBackdrop" aria-hidden="true"></div>
+
+  <!-- Hamburger side menu (Fazon-style red sidebar) -->
+  <aside class="side-menu" id="menuOverlay" aria-hidden="true">
+    <button class="side-menu__close" id="menuOverlayClose" aria-label="Close menu">
+      <span class="side-menu__close-icon">×</span>
+      <span class="brace">{</span>CLOSE<span class="brace">}</span>
+    </button>
+    <nav class="side-menu__nav">
+      <a href="#top">Home</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#plans">Plans</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="side-menu__foot">
+      <p>The Prompt Squad</p>
+      <p>Gilbert, Arizona</p>
+    </div>
+  </aside>
+
+  <main id="top">
+
+    <!-- ═══════════════════ SLIDES (horizontal track) ═══════════════════ -->
+    <div class="slides">
+    <div class="slides__track">
+
+    <!-- ─────────────────────  HERO  ───────────────────── -->
+    <section class="slide hero">
+      <div class="container">
+        <h1 class="hero__headline">
+          <span class="line">AI consulting</span>
+          <span class="line"><span class="brace">{</span><em>for the rest</em><span class="brace">}</span></span>
+          <span class="line">of us.</span>
+        </h1>
+
+        <p class="hero__lede">
+          We come to your office, set up the AI tools you actually need, and show you how to use them. No subscriptions you'll forget about. No Slack channel you'll never check. Just AI that works on Monday morning.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─────────────────────  SERVICES  ───────────────────── -->
+    <section class="slide section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow"><span class="brace">{</span>Services<span class="brace">}</span></span>
+          <h2 class="section__h">
+            What you get when<br>we <em>show up</em>.
+          </h2>
+          <p class="section__lede">
+            We specialize in Claude — the most capable AI assistant on the market. We set it up, tailor it to your work, and make sure you know how to use it before we leave.
+          </p>
         </div>
-        <div class="problem-card">
-          <h3>No Time</h3>
-          <p>"I can't spend weeks learning this. I have a business to run."</p>
-        </div>
-        <div class="problem-card">
-          <h3>Not Technical</h3>
-          <p>"I'm not a tech person. I just want it to work."</p>
-        </div>
-        <div class="problem-card accent">
-          <h3>That's Why We Exist</h3>
-          <p>We handle the setup, the configuration, and the training — so you can skip straight to the results.</p>
+
+        <div class="services__grid">
+
+          <article class="service-card">
+            <div class="service-card__num">01</div>
+            <h3>The setup.</h3>
+            <p>Claude installed and configured on every device that matters — your desktop, your laptop, every screen on your team. Accounts, preferences, integrations, all squared away.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__num">02</div>
+            <h3>Workflows for your work.</h3>
+            <p>Not generic prompts off the internet. Real templates for what you actually do — drafting estimates, summarizing voicemails, writing follow-ups, cleaning up spreadsheets.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__num">03</div>
+            <h3>Hands-on training.</h3>
+            <p>We sit at your desk. We use real examples from your real work. By the time we leave, you've actually done it yourself once or twice.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__num">04</div>
+            <h3>Ongoing support.</h3>
+            <p>Text us when you have a question. Same-day response, usually within the hour. We keep your setup current as Claude evolves — and it evolves a lot.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__num">05</div>
+            <h3>Privacy &amp; security review.</h3>
+            <p>We help you understand what data goes where, set the right privacy controls, and make sure your AI usage aligns with how your business needs to operate.</p>
+          </article>
+
+          <article class="service-card service-card--accent">
+            <div class="service-card__num">→</div>
+            <h3>Ready to start?</h3>
+            <p>Tell us what you do and we'll build a plan around it. No deck. No mystery line items.</p>
+            <a href="#contact" class="card-link">Get in touch <span>→</span></a>
+          </article>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-label">Services</div>
-      <h2>What We Do</h2>
-      <p class="section-sub">We specialize in Claude — the most capable AI assistant on the market. We set it up, tailor it to your work, and make sure you know how to use it.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>AI Setup & Installation</h3>
-          <p>We install and configure Claude on your devices — desktop, laptop, or across your entire office. Accounts created, preferences set, ready to go from day one.</p>
+    <!-- ─────────────────────  PROCESS  ───────────────────── -->
+    <section class="slide section section--red" id="process">
+      <div class="container">
+        <div class="section__head section__head--split">
+          <div>
+            <span class="eyebrow"><span class="brace">{</span>Process<span class="brace">}</span></span>
+            <h2 class="section__h">
+              How we <em>actually</em><br>work together.
+            </h2>
+          </div>
+          <p class="section__lede section__lede--right">
+            Four steps from "I should look into AI" to "I'm using AI every day." Most clients are up and running within two weeks of the first email.
+          </p>
         </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Custom Workflow Design</h3>
-          <p>Every business is different. We build AI workflows tailored to how you actually work — whether that's drafting emails, analyzing data, managing customers, or generating content.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Hands-On Training</h3>
-          <p>We don't just set it up and leave. We sit down with you, show you exactly how to use it, and make sure you're comfortable before we walk out the door.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Ongoing Support & Optimization</h3>
-          <p>AI evolves fast. New features, new capabilities, new ways to save time. We keep your setup current and continuously improve your workflows as the technology advances.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Privacy & Security Review</h3>
-          <p>We help you understand what data goes where, set appropriate privacy controls, and make sure your AI usage aligns with your business's security requirements.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- How It Works -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-label">Process</div>
-      <h2>How It Works</h2>
-      <p class="section-sub">From first contact to fully operational AI — here's what to expect.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3>Tell Us What You Need</h3>
-            <p>Fill out our intake form below. Tell us about your business, what you're hoping AI can do for you, and where you're at with technology. No wrong answers.</p>
+        <div class="process">
+          <div class="process__step">
+            <div class="process__num">01</div>
+            <h3>Tell us what you need.</h3>
+            <p>Fill out the intake form below. The more detail, the better the proposal.</p>
+          </div>
+          <div class="process__step">
+            <div class="process__num">02</div>
+            <h3>We write a plan.</h3>
+            <p>Honest proposal in your inbox within 48 hours. Plain English. No deck.</p>
+          </div>
+          <div class="process__step">
+            <div class="process__num">03</div>
+            <h3>We show up.</h3>
+            <p>Most setups: a single afternoon at your office. Two if there's a team to train.</p>
+          </div>
+          <div class="process__step">
+            <div class="process__num">04</div>
+            <h3>We stick around.</h3>
+            <p>Optional monthly plans below — for when you want us on retainer.</p>
           </div>
         </div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3>We Build Your Plan</h3>
-            <p>We review your needs and put together a custom proposal — what we'll set up, how we'll train you, and what it'll cost. No surprises, no hidden fees.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3>Setup & Training Session</h3>
-            <p>We meet at our Gilbert office, set everything up on your devices, build your custom workflows, and walk you through everything hands-on. You leave ready to use AI.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h3>Ongoing Support</h3>
-            <p>Questions come up. AI updates happen. New needs arise. We're here for all of it — with support plans that keep your AI setup running at peak performance.</p>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Plans -->
-  <section class="plans" id="plans">
-    <div class="container">
-      <div class="section-label">Support Plans</div>
-      <h2>Stay Ahead With Ongoing Support</h2>
-      <p class="section-sub">AI moves fast. Our monthly plans make sure you're never left behind.</p>
-      <div class="plans-grid">
-        <div class="plan-card">
-          <div class="plan-name">Prompt Support</div>
-          <div class="plan-price">$99<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>Priority email & text support</li>
-            <li>Monthly check-in call</li>
-            <li>Prompt & workflow updates as Claude evolves</li>
-            <li>Help when you get stuck</li>
-            <li>Access to new feature walkthroughs</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline btn-full">Get Started</a>
-        </div>
-        <div class="plan-card featured">
-          <div class="plan-badge">Most Popular</div>
-          <div class="plan-name">Prompt Partner</div>
-          <div class="plan-price">$249<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>Everything in Prompt Support</li>
-            <li>Monthly 1-hour optimization session</li>
-            <li>Review & improve your AI usage</li>
-            <li>Build new workflows as needs arise</li>
-            <li>Train new employees</li>
-          </ul>
-          <a href="#contact" class="btn btn-full">Get Started</a>
-        </div>
-        <div class="plan-card">
-          <div class="plan-name">Prompt Squad Pro</div>
-          <div class="plan-price">$499<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>Everything in Prompt Partner</li>
-            <li>On-call support — we're a text away</li>
-            <li>Unlimited optimization sessions</li>
-            <li>Custom workflow builds included</li>
-            <li>First access to new AI tools & features</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline btn-full">Get Started</a>
-        </div>
-      </div>
-      <p class="plans-note">All setup services start at $500 with a $250 deposit. Final pricing is based on your specific needs — fill out the form below and we'll put together a custom quote.</p>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-inner">
-        <div class="about-content">
-          <div class="section-label">About</div>
-          <h2>Meet Cole Penner</h2>
-          <p>I started The Prompt Squad because I saw the same thing happening over and over — business owners and professionals in the Phoenix area hearing about AI, knowing they should be using it, but having no idea where to start. And the options out there? Either figure it out yourself with YouTube videos, or pay some consulting firm $10,000 for a strategy deck.</p>
-          <p>I thought there should be something in between. Someone who actually shows up, sits down with you, sets it up on your computer, and makes sure you know how to use it before they leave. That's what we do.</p>
-          <p>I work with AI every single day. I've spent hundreds of hours learning what works, what doesn't, and how to make these tools actually useful for real work — not just tech demos. I bring that experience directly to your business so you don't have to go through the same learning curve.</p>
-          <p>Based right here in Gilbert, Arizona. If you're in the Phoenix metro area, I'd love to help you get started.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Industries -->
-  <section class="industries">
-    <div class="container">
-      <div class="section-label">Who We Help</div>
-      <h2>AI Works For Every Industry</h2>
-      <p class="section-sub">We've helped businesses across the Phoenix metro area get set up with AI. Here are some of the industries we work with.</p>
-      <div class="industry-tags">
-        <span class="tag">Real Estate</span>
-        <span class="tag">Dental Offices</span>
-        <span class="tag">Law Firms</span>
-        <span class="tag">Restaurants</span>
-        <span class="tag">General Contractors</span>
-        <span class="tag">HVAC & Plumbing</span>
-        <span class="tag">Insurance Agencies</span>
-        <span class="tag">Accounting Firms</span>
-        <span class="tag">Auto Shops</span>
-        <span class="tag">Medical Practices</span>
-        <span class="tag">Marketing Agencies</span>
-        <span class="tag">Salons & Spas</span>
-        <span class="tag">Property Management</span>
-        <span class="tag">Retail Stores</span>
-        <span class="tag">Nonprofits</span>
-        <span class="tag">Consultants</span>
-        <span class="tag">Fitness Studios</span>
-        <span class="tag">Home Services</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / Intake Form -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-label">Get Started</div>
-      <h2>Tell Us What You Need</h2>
-      <p class="section-sub">Fill out the form below and we'll get back to you with a custom plan and quote. The more detail you provide, the better we can help.</p>
-
-      <form class="intake-form" id="intakeForm" action="#" method="POST">
-        <div class="form-section">
-          <h3>About You</h3>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name <span class="req">*</span></label>
-              <input type="text" id="firstName" name="firstName" required>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name <span class="req">*</span></label>
-              <input type="text" id="lastName" name="lastName" required>
+    <!-- ─────────────────────  ABOUT (Cole) ───────────────────── -->
+    <section class="slide about" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__photo">
+            <img src="cole.webp" alt="Cole, founder of The Prompt Squad" loading="lazy">
+            <div class="about__photo-tag">
+              <span>Cole Penner</span>
+              <em>Founder · Gilbert, AZ</em>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email <span class="req">*</span></label>
-              <input type="email" id="email" name="email" required>
+
+          <div class="about__words">
+            <span class="eyebrow"><span class="brace">{</span>About us<span class="brace">}</span></span>
+            <h2 class="section__h">
+              Started by someone<br>who's been <em>where you are</em>.
+            </h2>
+            <p>
+              I started The Prompt Squad after watching the same scene play out a dozen times: a smart business owner, a YouTube tutorial, two hours later, a closed laptop and a faint sense of failure.
+            </p>
+            <p>
+              The tools were good. The instructions were not. So now I do it differently. I come to your office with my laptop, sit at your desk, set up your tools, show you how to use them with your real work, and leave you with something that actually works on Monday.
+            </p>
+            <p>
+              Based in Gilbert. If you're anywhere from Queen Creek to Scottsdale, I can be at your door this week.
+            </p>
+            <div class="about__stats">
+              <div>
+                <strong>500+</strong>
+                <span>Hours with AI tools</span>
+              </div>
+              <div>
+                <strong>20+</strong>
+                <span>Industries served</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>Phone number, always answered</span>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="phone">Phone <span class="req">*</span></label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="preferredContact">Preferred Contact Method <span class="req">*</span></label>
-            <select id="preferredContact" name="preferredContact" required>
-              <option value="">Select one...</option>
-              <option value="phone">Phone Call</option>
-              <option value="text">Text Message</option>
-              <option value="email">Email</option>
-            </select>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="form-section">
-          <h3>About Your Business</h3>
-          <div class="form-group">
-            <label for="businessName">Business Name <span class="optional">(if applicable)</span></label>
-            <input type="text" id="businessName" name="businessName">
+    <!-- ─────────────────────  PLANS  ───────────────────── -->
+    <section class="slide section section--red" id="plans">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow"><span class="brace">{</span>Monthly plans<span class="brace">}</span></span>
+          <h2 class="section__h">
+            Stay sharp <em>after</em><br>the setup.
+          </h2>
+          <p class="section__lede section__lede--center">
+            Setup work is one-time. These are for after — when you'd like us on retainer to keep your tools current, your prompts evolving, and your team trained as new hires come on. Cancel anytime.
+          </p>
+        </div>
+
+        <div class="plans__grid">
+
+          <article class="plan">
+            <div class="plan__head">
+              <h3>Basic</h3>
+              <span class="plan__tag">For solo operators</span>
+            </div>
+            <div class="plan__price">
+              <strong>$99</strong>
+              <span>/ month</span>
+            </div>
+            <ul class="plan__list">
+              <li>Email &amp; text support</li>
+              <li>Monthly check-in call</li>
+              <li>Prompt updates as Claude evolves</li>
+              <li>Help when you get stuck</li>
+              <li>New feature walkthroughs</li>
+            </ul>
+            <a href="#contact" class="btn btn--ghost btn--block">Choose Basic</a>
+          </article>
+
+          <article class="plan plan--featured">
+            <div class="plan__ribbon">Most popular</div>
+            <div class="plan__head">
+              <h3>Business</h3>
+              <span class="plan__tag">Where most clients land</span>
+            </div>
+            <div class="plan__price">
+              <strong>$249</strong>
+              <span>/ month</span>
+            </div>
+            <ul class="plan__list">
+              <li>Everything in Basic</li>
+              <li>Monthly 1-hour optimization session</li>
+              <li>Review &amp; improve your AI usage</li>
+              <li>Build new workflows as needs arise</li>
+              <li>Train new employees</li>
+            </ul>
+            <a href="#contact" class="btn btn--dark btn--block">Choose Business</a>
+          </article>
+
+          <article class="plan">
+            <div class="plan__head">
+              <h3>Enterprise</h3>
+              <span class="plan__tag">AI is core to your business</span>
+            </div>
+            <div class="plan__price">
+              <strong>$499</strong>
+              <span>/ month</span>
+            </div>
+            <ul class="plan__list">
+              <li>Everything in Business</li>
+              <li>On-call support — text away</li>
+              <li>Unlimited optimization sessions</li>
+              <li>Custom workflow builds included</li>
+              <li>First access to new AI tools</li>
+            </ul>
+            <a href="#contact" class="btn btn--ghost btn--block">Choose Enterprise</a>
+          </article>
+
+        </div>
+
+        <p class="plans__note">
+          * Initial setup engagements start at $500 with a $250 deposit. Final price depends on the scope — we'll quote you honestly after the intake form. Plans are optional and you can join (or leave) anytime.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─────────────────────  CTA BANNER  ───────────────────── -->
+    <section class="slide cta-banner">
+      <div class="container">
+        <div class="cta-banner__inner">
+          <h2>
+            <span class="line">Ready to put AI</span>
+            <span class="line"><span class="brace">{</span><em>to work</em><span class="brace">}</span>?</span>
+          </h2>
+          <a href="#contact" class="btn btn--light btn--lg">
+            Start the conversation <span class="btn__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    </div>
+    </div>
+    <!-- ═══════════════════ END SLIDES ═══════════════════ -->
+
+    <!-- ─────────────────────  CONTACT  ───────────────────── -->
+    <section class="section" id="contact">
+      <div class="container container--narrow">
+        <div class="section__head section__head--center">
+          <span class="eyebrow"><span class="brace">{</span>Get in touch<span class="brace">}</span></span>
+          <h2 class="section__h">
+            Tell us what<br>you <em>need</em>.
+          </h2>
+          <p class="section__lede section__lede--center">
+            The more detail you provide, the better the proposal. We read every word — and write back within 24 hours, never longer.
+          </p>
+        </div>
+
+        <!--
+          FORM SUBMISSIONS:
+          This form posts to Web3Forms (free, no signup beyond entering your email).
+          To make it live:
+          1. Visit https://web3forms.com → enter your email → get an access key
+          2. Replace YOUR_WEB3FORMS_ACCESS_KEY below with your key
+        -->
+        <form class="form" id="intakeForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New Prompt Squad intake">
+          <input type="hidden" name="from_name" value="The Prompt Squad website">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+          <div class="form__row">
+            <label class="field">
+              <span>First name</span>
+              <input type="text" name="firstName" required>
+            </label>
+            <label class="field">
+              <span>Last name</span>
+              <input type="text" name="lastName" required>
+            </label>
           </div>
-          <div class="form-group">
-            <label for="industry">Industry / Type of Business <span class="req">*</span></label>
-            <input type="text" id="industry" name="industry" placeholder="e.g., Real Estate, Dental Office, Law Firm, Personal Use" required>
+
+          <div class="form__row">
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+            <label class="field">
+              <span>Phone</span>
+              <input type="tel" name="phone" required>
+            </label>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="teamSize">How many people would use AI? <span class="req">*</span></label>
-              <select id="teamSize" name="teamSize" required>
-                <option value="">Select one...</option>
-                <option value="just-me">Just me</option>
-                <option value="2-5">2–5 people</option>
-                <option value="6-15">6–15 people</option>
-                <option value="16-50">16–50 people</option>
-                <option value="50+">50+</option>
+
+          <div class="form__row">
+            <label class="field">
+              <span>Business name <em>(optional)</em></span>
+              <input type="text" name="businessName">
+            </label>
+            <label class="field">
+              <span>Industry / type of business</span>
+              <input type="text" name="industry" placeholder="e.g., dental office, real estate" required>
+            </label>
+          </div>
+
+          <div class="form__row">
+            <label class="field">
+              <span>How many people would use AI?</span>
+              <select name="teamSize" required>
+                <option value="">Select…</option>
+                <option>Just me</option>
+                <option>2–5 people</option>
+                <option>6–15 people</option>
+                <option>16–50 people</option>
+                <option>50+ people</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label for="location">Your City <span class="req">*</span></label>
-              <input type="text" id="location" name="location" placeholder="e.g., Gilbert, Mesa, Scottsdale" required>
-            </div>
+            </label>
+            <label class="field">
+              <span>Your city</span>
+              <input type="text" name="location" placeholder="Gilbert, Mesa, Scottsdale…" required>
+            </label>
           </div>
-        </div>
 
-        <div class="form-section">
-          <h3>About Your AI Needs</h3>
-          <div class="form-group">
-            <label for="aiExperience">How would you describe your experience with AI? <span class="req">*</span></label>
-            <select id="aiExperience" name="aiExperience" required>
-              <option value="">Select one...</option>
-              <option value="none">Never used it</option>
-              <option value="tried">I've tried ChatGPT or similar a few times</option>
-              <option value="some">I use AI occasionally but want to do more</option>
-              <option value="regular">I use AI regularly but want expert help optimizing</option>
+          <label class="field">
+            <span>How would you describe your AI experience?</span>
+            <select name="aiExperience" required>
+              <option value="">Select…</option>
+              <option>Honestly never used it</option>
+              <option>Tried ChatGPT once or twice</option>
+              <option>Use it occasionally, want to use it more</option>
+              <option>Use it daily, want expert tuning</option>
             </select>
-          </div>
-          <div class="form-group">
-            <label>What are you hoping AI can help with? <span class="optional">(check all that apply)</span></label>
-            <div class="checkbox-grid">
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="email"> Email & Communication
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="customer-service"> Customer Service
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="marketing"> Marketing & Content
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="data"> Data & Analysis
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="admin"> Admin & Scheduling
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="documents"> Documents & Reports
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="sales"> Sales & Lead Follow-up
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="social"> Social Media
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="coding"> Coding & Technical
-              </label>
-              <label class="checkbox-label">
-                <input type="checkbox" name="needs" value="other"> Other
-              </label>
+          </label>
+
+          <fieldset class="checks">
+            <legend>What are you hoping AI can help with? <em>(check what applies)</em></legend>
+            <div class="checks__grid">
+              <label class="check"><input type="checkbox" name="needs" value="email"> Email &amp; communication</label>
+              <label class="check"><input type="checkbox" name="needs" value="customer-service"> Customer service</label>
+              <label class="check"><input type="checkbox" name="needs" value="marketing"> Marketing &amp; content</label>
+              <label class="check"><input type="checkbox" name="needs" value="data"> Data &amp; analysis</label>
+              <label class="check"><input type="checkbox" name="needs" value="admin"> Admin &amp; scheduling</label>
+              <label class="check"><input type="checkbox" name="needs" value="documents"> Documents &amp; reports</label>
+              <label class="check"><input type="checkbox" name="needs" value="sales"> Sales &amp; lead follow-up</label>
+              <label class="check"><input type="checkbox" name="needs" value="social"> Social media</label>
+              <label class="check"><input type="checkbox" name="needs" value="coding"> Coding &amp; technical</label>
+              <label class="check"><input type="checkbox" name="needs" value="other"> Something else</label>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="details">Tell us more about what you're looking for <span class="req">*</span></label>
-            <textarea id="details" name="details" rows="5" placeholder="What does a typical day look like for you? What tasks eat up the most time? What would change if AI could handle some of that? The more detail, the better we can help." required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="timeline">How soon are you looking to get started? <span class="req">*</span></label>
-            <select id="timeline" name="timeline" required>
-              <option value="">Select one...</option>
-              <option value="asap">As soon as possible</option>
-              <option value="this-month">This month</option>
-              <option value="next-month">In the next couple months</option>
-              <option value="exploring">Just exploring for now</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="hearAbout">How did you hear about us?</label>
-            <input type="text" id="hearAbout" name="hearAbout" placeholder="Google, referral, social media, etc.">
-          </div>
-        </div>
+          </fieldset>
 
-        <button type="submit" class="btn btn-lg btn-full">Submit — We'll Be In Touch Soon</button>
-        <p class="form-disclaimer">We typically respond within 24 hours. Your information is never shared with third parties.</p>
-      </form>
-    </div>
-  </section>
+          <label class="field">
+            <span>Tell us more — what does a typical day look like?</span>
+            <textarea name="details" rows="6" placeholder="What eats up your time? What would change if you had a smart assistant? Be as specific as you can." required></textarea>
+          </label>
 
-  <!-- Footer -->
+          <div class="form__row">
+            <label class="field">
+              <span>How soon are you looking to start?</span>
+              <select name="timeline" required>
+                <option value="">Select…</option>
+                <option>As soon as possible</option>
+                <option>This month</option>
+                <option>Next couple of months</option>
+                <option>Just exploring</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>How did you hear about us? <em>(optional)</em></span>
+              <input type="text" name="hearAbout" placeholder="Google, a friend, social media…">
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn--dark btn--lg btn--block">
+            Send it over <span class="btn__arrow">→</span>
+          </button>
+          <p class="form__disclaimer">We respond within 24 hours, usually less. Your info isn't shared with anyone.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─────────────────────  FOOTER  ───────────────────── -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          The Prompt Squad
-          <p>AI setup, training, and support for businesses and individuals in the Phoenix metro area.</p>
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#top" class="nav__brand nav__brand--big">
+            <span class="nav__brand-mark">◆</span>
+            <span>The Prompt Squad</span>
+          </a>
+          <p>
+            A small AI consultancy in Gilbert, Arizona. We come to you.
+          </p>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="#services">Services</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#plans">Plans</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-links">
-          <h4>Service Areas</h4>
-          <span>Gilbert</span>
-          <span>Mesa</span>
-          <span>Chandler</span>
-          <span>Tempe</span>
-          <span>Scottsdale</span>
-          <span>Phoenix</span>
-          <span>Queen Creek</span>
-          <span>San Tan Valley</span>
+
+        <div class="footer__cols">
+          <div>
+            <h4>Sections</h4>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#plans">Plans</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div>
+            <h4>Service area</h4>
+            <p>Gilbert · Mesa · Chandler<br>Tempe · Scottsdale · Phoenix<br>Queen Creek · San Tan Valley</p>
+          </div>
+          <div>
+            <h4>Get in touch</h4>
+            <a href="#contact">Intake form</a>
+            <a href="mailto:hello@thepromptsquad.com">hello@thepromptsquad.com</a>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 The Prompt Squad. All rights reserved. Based in Gilbert, Arizona.</p>
+
+      <div class="footer__bottom">
+        <p>© 2026 The Prompt Squad. All rights reserved.</p>
+        <p>Built in Gilbert, AZ.</p>
       </div>
     </div>
   </footer>
