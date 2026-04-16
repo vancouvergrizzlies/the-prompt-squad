@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OG card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #fafafa;
+      font-family: "Figtree", -apple-system, sans-serif;
+      color: #b42822;
+    }
+    .card {
+      width: 1200px;
+      height: 630px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px;
+      text-align: center;
+    }
+    /* Subtle vertical column lines (matches the site's grid-lines chrome) */
+    .grid {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      pointer-events: none;
+    }
+    .grid span {
+      border-left: 1px solid rgba(0, 0, 0, 0.07);
+    }
+    .grid span:first-child { border-left: none; }
+
+    .meta {
+      position: absolute;
+      top: 56px;
+      left: 56px;
+      right: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #b42822;
+    }
+    .meta__block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta__label { font-size: 15px; font-weight: 500; color: #b42822; }
+    .meta__value { font-size: 17px; font-weight: 700; color: #b42822; letter-spacing: 0.01em; }
+    .brace { color: #b42822; font-weight: 700; }
+
+    .headline {
+      font-weight: 700;
+      font-size: 104px;
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #b42822;
+    }
+    .headline .line { display: block; }
+    .headline em { font-style: normal; font-weight: 700; }
+
+    .sub {
+      margin-top: 36px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #b42822;
+    }
+
+    .bolt {
+      position: absolute;
+      top: 56px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      fill: #b42822;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <div class="meta">
+      <div class="meta__block">
+        <span class="meta__label">The Prompt Squad</span>
+        <span class="meta__value"><span class="brace">{</span>AI&nbsp;CONSULTING<span class="brace">}</span></span>
+      </div>
+      <div class="meta__block" style="text-align: right;">
+        <span class="meta__label">Location</span>
+        <span class="meta__value"><span class="brace">{</span>GILBERT,&nbsp;ARIZONA<span class="brace">}</span></span>
+      </div>
+    </div>
+
+    <h1 class="headline">
+      <span class="line">AI CONSULTING</span>
+      <span class="line"><span class="brace">{</span><em>FOR&nbsp;THE&nbsp;REST</em><span class="brace">}</span></span>
+      <span class="line">OF US.</span>
+    </h1>
+
+    <p class="sub">In-person AI setup across the Phoenix metro</p>
+  </div>
+</body>
+</html>
